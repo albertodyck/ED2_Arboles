@@ -204,9 +204,13 @@ namespace ArbolesBinarios
                 }
                 else
                 {
+                    //nodo izquiero != null nodo hijo derecho != null
                     
-                    
+                    Nodo nodoDerecha = RecorrerDerecha(nodo.HijoIzquierdo);
 
+                    nodoDerecha.HijoIzquierdo = nodo.HijoIzquierdo;
+
+                    nodo = nodoDerecha;
                 }
             }
         }
