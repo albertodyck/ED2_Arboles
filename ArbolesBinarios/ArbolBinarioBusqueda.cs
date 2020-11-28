@@ -195,11 +195,11 @@ namespace ArbolesBinarios
                     //tenemos hijo izquierdo
                     if (nodo.Dato < nodoPadre.Dato)
                     {
-                        nodoPadre.HijoDerecho = nodo.HijoIzquierdo;
+                        nodoPadre.HijoIzquierdo = nodo.HijoIzquierdo;
                     }
                     else
                     {
-                        nodoPadre.HijoIzquierdo = nodo.HijoIzquierdo;
+                        nodoPadre.HijoDerecho = nodo.HijoIzquierdo;
                     }
                 }
                 else
@@ -208,9 +208,15 @@ namespace ArbolesBinarios
                     
                     Nodo nodoDerecha = RecorrerDerecha(nodo.HijoIzquierdo);
 
-                    nodoDerecha.HijoIzquierdo = nodo.HijoIzquierdo;
+                    //nodoDerecha.HijoIzquierdo = nodo.HijoIzquierdo;
 
-                    nodo = nodoDerecha;
+                    nodoDerecha.HijoDerecho = nodo.HijoDerecho;
+
+                    nodoPadre.HijoDerecho = nodoDerecha;
+
+                    //nodo = nodoDerecha;
+
+                    //nodoPadre.HijoDerecho = null;
                 }
             }
         }
